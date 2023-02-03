@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B91B9D58298C3AA700814C3C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B9D57298C3AA700814C3C /* TabBar.swift */; };
+		EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED0298D4324004EE08F /* ArticleAPI.swift */; };
+		EC178ED6298D64F1004EE08F /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED5298D64F1004EE08F /* ResponseDTO.swift */; };
+		EC178ED8298D657E004EE08F /* AllArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED7298D657E004EE08F /* AllArticles.swift */; };
+		EC178EDA298D65A9004EE08F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED9298D65A9004EE08F /* Article.swift */; };
 		EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604CFD298C0C7A00C65000 /* AppDelegate.swift */; };
 		EC604D00298C0C7A00C65000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604CFF298C0C7A00C65000 /* SceneDelegate.swift */; };
 		EC604D02298C0C7A00C65000 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604D01298C0C7A00C65000 /* ViewController.swift */; };
@@ -37,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		B91B9D57298C3AA700814C3C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = ArticleWorks/Controllers/TabBar.swift; sourceTree = SOURCE_ROOT; };
+		EC178ED0298D4324004EE08F /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
+		EC178ED5298D64F1004EE08F /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		EC178ED7298D657E004EE08F /* AllArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllArticles.swift; sourceTree = "<group>"; };
+		EC178ED9298D65A9004EE08F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		EC604CFA298C0C7A00C65000 /* ArticleWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC604CFD298C0C7A00C65000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC604CFF298C0C7A00C65000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +87,9 @@
 		B91B9D52298C39A500814C3C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EC178ED2298D638B004EE08F /* DTO */,
+				EC178ED7298D657E004EE08F /* AllArticles.swift */,
+				EC178ED9298D65A9004EE08F /* Article.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,6 +108,22 @@
 				B91B9D57298C3AA700814C3C /* TabBar.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EC178ECF298D42EB004EE08F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EC178ED0298D4324004EE08F /* ArticleAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		EC178ED2298D638B004EE08F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				EC178ED5298D64F1004EE08F /* ResponseDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		EC604CF1298C0C7A00C65000 = {
@@ -122,6 +149,7 @@
 		EC604CFC298C0C7A00C65000 /* ArticleWorks */ = {
 			isa = PBXGroup;
 			children = (
+				EC178ECF298D42EB004EE08F /* Networking */,
 				B91B9D54298C39B500814C3C /* Views */,
 				B91B9D53298C39AF00814C3C /* Controllers */,
 				B91B9D52298C39A500814C3C /* Models */,
@@ -283,6 +311,10 @@
 			files = (
 				EC604D02298C0C7A00C65000 /* ViewController.swift in Sources */,
 				EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */,
+				EC178ED6298D64F1004EE08F /* ResponseDTO.swift in Sources */,
+				EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */,
+				EC178EDA298D65A9004EE08F /* Article.swift in Sources */,
+				EC178ED8298D657E004EE08F /* AllArticles.swift in Sources */,
 				EC604D00298C0C7A00C65000 /* SceneDelegate.swift in Sources */,
 				B91B9D58298C3AA700814C3C /* TabBar.swift in Sources */,
 			);
