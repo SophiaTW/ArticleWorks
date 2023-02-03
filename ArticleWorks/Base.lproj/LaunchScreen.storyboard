@@ -25,19 +25,20 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="dhb-S6-F89">
                                 <rect key="frame" x="120" y="627" width="310" height="271"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image 3" translatesAutoresizingMaskIntoConstraints="NO" id="JSP-uy-Da4">
-                                <rect key="frame" x="40" y="327" width="240" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 3" translatesAutoresizingMaskIntoConstraints="NO" id="JSP-uy-Da4">
+                                <rect key="frame" x="137.66666666666666" y="521" width="154.99999999999997" height="20"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JSP-uy-Da4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Pr-Kn-D9N"/>
                             <constraint firstItem="i7L-pH-teC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7bI-bT-Grl"/>
                             <constraint firstItem="i7L-pH-teC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="90y-DY-6lO"/>
                             <constraint firstItem="dhb-S6-F89" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JV4-ge-dvL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dhb-S6-F89" secondAttribute="trailing" id="TBF-1a-jht"/>
                             <constraint firstItem="QdY-my-O0m" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UhS-pj-ygp"/>
+                            <constraint firstItem="JSP-uy-Da4" firstAttribute="top" secondItem="QdY-my-O0m" secondAttribute="bottom" constant="20" id="h6A-TG-ohl"/>
                             <constraint firstItem="QdY-my-O0m" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vVc-2D-wMN"/>
                         </constraints>
                     </view>
