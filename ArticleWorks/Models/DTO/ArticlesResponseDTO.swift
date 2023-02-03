@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+final class ArticlesResponseDTO: Codable {
+    let data: [ArticlesDTO]
+}

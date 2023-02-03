@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B91B9D58298C3AA700814C3C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B9D57298C3AA700814C3C /* TabBar.swift */; };
+		B98372C5298D8B700064CF1B /* ArticlesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98372C4298D8B700064CF1B /* ArticlesDTO.swift */; };
 		EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED0298D4324004EE08F /* ArticleAPI.swift */; };
-		EC178ED6298D64F1004EE08F /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED5298D64F1004EE08F /* ResponseDTO.swift */; };
+		EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */; };
 		EC178ED8298D657E004EE08F /* AllArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED7298D657E004EE08F /* AllArticles.swift */; };
 		EC178EDA298D65A9004EE08F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED9298D65A9004EE08F /* Article.swift */; };
 		EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604CFD298C0C7A00C65000 /* AppDelegate.swift */; };
@@ -41,8 +42,9 @@
 
 /* Begin PBXFileReference section */
 		B91B9D57298C3AA700814C3C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = ArticleWorks/Controllers/TabBar.swift; sourceTree = SOURCE_ROOT; };
+		B98372C4298D8B700064CF1B /* ArticlesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDTO.swift; sourceTree = "<group>"; };
 		EC178ED0298D4324004EE08F /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
-		EC178ED5298D64F1004EE08F /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponseDTO.swift; sourceTree = "<group>"; };
 		EC178ED7298D657E004EE08F /* AllArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllArticles.swift; sourceTree = "<group>"; };
 		EC178ED9298D65A9004EE08F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		EC604CFA298C0C7A00C65000 /* ArticleWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +123,8 @@
 		EC178ED2298D638B004EE08F /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				EC178ED5298D64F1004EE08F /* ResponseDTO.swift */,
+				EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */,
+				B98372C4298D8B700064CF1B /* ArticlesDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -311,8 +314,9 @@
 			files = (
 				EC604D02298C0C7A00C65000 /* ViewController.swift in Sources */,
 				EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */,
-				EC178ED6298D64F1004EE08F /* ResponseDTO.swift in Sources */,
+				EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */,
 				EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */,
+				B98372C5298D8B700064CF1B /* ArticlesDTO.swift in Sources */,
 				EC178EDA298D65A9004EE08F /* Article.swift in Sources */,
 				EC178ED8298D657E004EE08F /* AllArticles.swift in Sources */,
 				EC604D00298C0C7A00C65000 /* SceneDelegate.swift in Sources */,
