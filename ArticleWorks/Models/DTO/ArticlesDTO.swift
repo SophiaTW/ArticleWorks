@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ArticlesDTO: Codable {
+final class ArticleDTO: Codable {
     let name: String
     let description: String
     let released_at: Date

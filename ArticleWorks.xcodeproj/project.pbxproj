@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B91B9D58298C3AA700814C3C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B9D57298C3AA700814C3C /* TabBar.swift */; };
-		B98372C5298D8B700064CF1B /* ArticlesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98372C4298D8B700064CF1B /* ArticlesDTO.swift */; };
 		EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED0298D4324004EE08F /* ArticleAPI.swift */; };
 		EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */; };
-		EC178ED8298D657E004EE08F /* AllArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED7298D657E004EE08F /* AllArticles.swift */; };
 		EC178EDA298D65A9004EE08F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED9298D65A9004EE08F /* Article.swift */; };
 		EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604CFD298C0C7A00C65000 /* AppDelegate.swift */; };
 		EC604D00298C0C7A00C65000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604CFF298C0C7A00C65000 /* SceneDelegate.swift */; };
@@ -21,6 +19,10 @@
 		EC604D15298C0C7B00C65000 /* ArticleWorksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604D14298C0C7B00C65000 /* ArticleWorksTests.swift */; };
 		EC604D1F298C0C7B00C65000 /* ArticleWorksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604D1E298C0C7B00C65000 /* ArticleWorksUITests.swift */; };
 		EC604D21298C0C7B00C65000 /* ArticleWorksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604D20298C0C7B00C65000 /* ArticleWorksUITestsLaunchTests.swift */; };
+		ECEA464529914E910059FF0B /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA464429914E910059FF0B /* LibraryViewController.swift */; };
+		ECEA4647299155CD0059FF0B /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA4646299155CD0059FF0B /* ArticleDTO.swift */; };
+		ECEA4649299159B00059FF0B /* MyTutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA4648299159B00059FF0B /* MyTutorialsViewController.swift */; };
+		ECEA464D299191220059FF0B /* IncludedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA464C299191220059FF0B /* IncludedDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +44,8 @@
 
 /* Begin PBXFileReference section */
 		B91B9D57298C3AA700814C3C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = ArticleWorks/Controllers/TabBar.swift; sourceTree = SOURCE_ROOT; };
-		B98372C4298D8B700064CF1B /* ArticlesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDTO.swift; sourceTree = "<group>"; };
 		EC178ED0298D4324004EE08F /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
 		EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponseDTO.swift; sourceTree = "<group>"; };
-		EC178ED7298D657E004EE08F /* AllArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllArticles.swift; sourceTree = "<group>"; };
 		EC178ED9298D65A9004EE08F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		EC604CFA298C0C7A00C65000 /* ArticleWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC604CFD298C0C7A00C65000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +59,10 @@
 		EC604D1A298C0C7B00C65000 /* ArticleWorksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticleWorksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC604D1E298C0C7B00C65000 /* ArticleWorksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWorksUITests.swift; sourceTree = "<group>"; };
 		EC604D20298C0C7B00C65000 /* ArticleWorksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWorksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ECEA464429914E910059FF0B /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		ECEA4646299155CD0059FF0B /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
+		ECEA4648299159B00059FF0B /* MyTutorialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTutorialsViewController.swift; sourceTree = "<group>"; };
+		ECEA464C299191220059FF0B /* IncludedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncludedDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				EC178ED2298D638B004EE08F /* DTO */,
-				EC178ED7298D657E004EE08F /* AllArticles.swift */,
 				EC178ED9298D65A9004EE08F /* Article.swift */,
 			);
 			path = Models;
@@ -100,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				EC604D01298C0C7A00C65000 /* ViewController.swift */,
+				ECEA464429914E910059FF0B /* LibraryViewController.swift */,
+				ECEA4648299159B00059FF0B /* MyTutorialsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,7 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */,
-				B98372C4298D8B700064CF1B /* ArticlesDTO.swift */,
+				ECEA4646299155CD0059FF0B /* ArticleDTO.swift */,
+				ECEA464C299191220059FF0B /* IncludedDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -312,14 +318,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEA4647299155CD0059FF0B /* ArticleDTO.swift in Sources */,
 				EC604D02298C0C7A00C65000 /* ViewController.swift in Sources */,
 				EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */,
 				EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */,
 				EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */,
-				B98372C5298D8B700064CF1B /* ArticlesDTO.swift in Sources */,
 				EC178EDA298D65A9004EE08F /* Article.swift in Sources */,
-				EC178ED8298D657E004EE08F /* AllArticles.swift in Sources */,
 				EC604D00298C0C7A00C65000 /* SceneDelegate.swift in Sources */,
+				ECEA464D299191220059FF0B /* IncludedDTO.swift in Sources */,
+				ECEA464529914E910059FF0B /* LibraryViewController.swift in Sources */,
+				ECEA4649299159B00059FF0B /* MyTutorialsViewController.swift in Sources */,
 				B91B9D58298C3AA700814C3C /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tw-ios.ArticleWorks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -527,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tw-ios.ArticleWorks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

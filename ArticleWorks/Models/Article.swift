@@ -15,3 +15,5 @@ final class Article: Codable {
     let duration: String
     let image: String
 }
+
+// definir contructor que reciba de la clase articleDTO y inicializa o extension
