@@ -21,7 +21,6 @@ import Foundation
 final class IncludedDTO: Codable{
     
     let id: String
-    let type: String
     let attributes: IncludedAttributesDTO
     
 }
@@ -29,8 +28,6 @@ final class IncludedDTO: Codable{
 class IncludedAttributesDTO: Codable{
     
     let name: String
-    let slug: String
     let description: String
     let level: String
-    let ordinal: Int
 }

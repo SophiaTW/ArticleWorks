@@ -20,17 +20,4 @@ class MyTutorialsViewController: UIViewController {
     func mostrarEnConsola(){
         print(articleDTO as Any )
     }
-    
-    /*
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articleDTO?.count ?? 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return articleDTO
-    }*/
-    
-    
-    
-    
 }
