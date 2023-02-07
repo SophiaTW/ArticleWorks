@@ -7,22 +7,10 @@
 
 import Foundation
 
-/*
- "id" : "1",
-                 "type" : "domains",
-                 "attributes" : {
-                     "name" : "iOS & Swift",
-                     "slug" : "ios",
-                     "description" : "Learn iOS development in Swift",
-                     "level" : "production",
-                     "ordinal" : 1
- */
-
 final class IncludedDTO: Codable{
     
     let id: String
     let attributes: IncludedAttributesDTO
-    
 }
 
 class IncludedAttributesDTO: Codable{

@@ -16,21 +16,19 @@ enum Path: String {
 }
 
 protocol ArticleAPIProtocol {
-    func getAllArticles(query: String, completionHandler: @escaping (ArticlesResponseDTO) -> Void)
+    func getAllArticles(query: String, completionHandler: @escaping ([Article]) -> Void)
 }
 
 struct ArticleAPI: ArticleAPIProtocol {
     static let baseURL = "raw.githubusercontent.com"
     
-    func getAllArticles(query: String, completionHandler: @escaping (ArticlesResponseDTO) -> Void) {
+    func getAllArticles(query: String, completionHandler: @escaping ([Article]) -> Void) {
         guard let url = buildURL(path: .allArticles) else {
             return
         }
         var request = URLRequest(url: url)
         request.httpMethod = HttpMethod.get.rawValue
-        print(" \(url)")
-
-        
+ 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data,
                   let response = response as? HTTPURLResponse,
@@ -48,8 +46,8 @@ struct ArticleAPI: ArticleAPIProtocol {
             
             do {
                 let articlesResponseDTO = try JSONDecoder().decode(ArticlesResponseDTO.self, from: data)
-                // TODO: transformar de dto a modelo de negocio con un map
-                completionHandler(articlesResponseDTO)
+                let articles = mapDTOToArticle(articlesResponseDTO: articlesResponseDTO)
+                completionHandler(articles)
             } catch {
                 print(error)
                 
@@ -62,6 +60,15 @@ struct ArticleAPI: ArticleAPIProtocol {
         }
         
         task.resume()
+    }
+
+    func mapDTOToArticle(articlesResponseDTO: ArticlesResponseDTO) -> [Article] {
+        articlesResponseDTO.data.map { article in
+            let domain = articlesResponseDTO.included.first { included in
+                return included.id == article.relationships.domains.data.first?.id
+            }
+            return Article(title: article.attributes.name, domain: domain?.attributes.name ?? "", description: article.attributes.description, createdDate: article.attributes.released_at, duration: article.attributes.duration, image: article.attributes.card_artwork_url)
+        }
     }
     
     private func buildURL(path: Path) -> URL? {

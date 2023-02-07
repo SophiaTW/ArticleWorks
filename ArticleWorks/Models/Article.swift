@@ -12,8 +12,15 @@ final class Article: Codable {
     let domain: String
     let description: String
     let createdDate: String
-    let duration: String
+    let duration: Int
     let image: String
+    
+    init(title: String, domain: String, description: String, createdDate: String, duration: Int, image: String) {
+        self.title = title
+        self.domain = domain
+        self.description = description
+        self.createdDate = createdDate
+        self.duration = duration
+        self.image = image
+    }
 }
-
-// definir contructor que reciba de la clase articleDTO y inicializa o extension

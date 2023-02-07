@@ -32,8 +32,7 @@ class TabBar: UITabBarController {
         viewControllers = [
             createNavController(for: MyTutorialsView(), title: NSLocalizedString("My Tutorials", comment: ""), image: UIImage(systemName: "person.crop.circle.fill")!),
             createNavController(for: ViewController(), title: NSLocalizedString("Downloads", comment: ""), image: UIImage(systemName: "arrow.down.circle.fill")!),
-            createNavController(for: LibraryViewController(), title: NSLocalizedString("Library", comment: ""), image: UIImage(systemName: "play.square.stack.fill")!)
+            createNavController(for: ViewController(), title: NSLocalizedString("Library", comment: ""), image: UIImage(systemName: "play.square.stack.fill")!)
         ]
     }
-    
 }
