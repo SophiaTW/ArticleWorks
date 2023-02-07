@@ -41,19 +41,23 @@ import Foundation
 final class ArticleDTO: Codable {
     let id: String
     let attributes: AttributesDTO
-    let relationships: relationshipsDTO
+    let relationships: RelationshipsDTO
 }
 
 final class AttributesDTO: Codable {
     let name: String
     let description: String
-    let released_at: Date
+    let released_at: String
     let duration: Int
     let professional: Bool
     let card_artwork_url: URL
 
 }
 
-final class relationshipsDTO: Codable {
-    let progression: String
+final class RelationshipsDTO: Codable {
+    let progression: MixData
+}
+
+final class MixData: Codable {
+    let data : String?
 }

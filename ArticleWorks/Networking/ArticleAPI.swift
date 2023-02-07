@@ -10,9 +10,9 @@ import Foundation
 enum HttpMethod: String {
     case get = "GET"
 }
-
+//https://raw.githubusercontent.com/kodecocodes/ios-interview/master/Practical%20Example/articles.json
 enum Path: String {
-    case allArticles = "kodecocodes/ios-interview/blob/master/Practical%20Example/articles.json"
+    case allArticles = "/kodecocodes/ios-interview/master/Practical Example/articles.json"
 }
 
 protocol ArticleAPIProtocol {
@@ -20,7 +20,7 @@ protocol ArticleAPIProtocol {
 }
 
 struct ArticleAPI: ArticleAPIProtocol {
-    static let baseURL = "github.com"
+    static let baseURL = "raw.githubusercontent.com"
     
     func getAllArticles(query: String, completionHandler: @escaping (ArticlesResponseDTO) -> Void) {
         guard let url = buildURL(path: .allArticles) else {
@@ -28,6 +28,8 @@ struct ArticleAPI: ArticleAPIProtocol {
         }
         var request = URLRequest(url: url)
         request.httpMethod = HttpMethod.get.rawValue
+        print(" \(url)")
+
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data,
