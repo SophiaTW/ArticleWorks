@@ -46,7 +46,7 @@ struct ArticleAPI: ArticleAPIProtocol {
             
             do {
                 let articlesResponseDTO = try JSONDecoder().decode(ArticlesResponseDTO.self, from: data)
-                //transformar de dto a modelo de negocio con un map
+                // TODO: transformar de dto a modelo de negocio con un map
                 completionHandler(articlesResponseDTO)
             } catch {
                 print(error)

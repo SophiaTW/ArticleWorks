@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B91B9D58298C3AA700814C3C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B9D57298C3AA700814C3C /* TabBar.swift */; };
+		B993FBE629928BEB00642E40 /* MyTutorialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993FBE529928BEB00642E40 /* MyTutorialsView.swift */; };
 		EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED0298D4324004EE08F /* ArticleAPI.swift */; };
 		EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */; };
 		EC178EDA298D65A9004EE08F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED9298D65A9004EE08F /* Article.swift */; };
@@ -21,7 +22,7 @@
 		EC604D21298C0C7B00C65000 /* ArticleWorksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604D20298C0C7B00C65000 /* ArticleWorksUITestsLaunchTests.swift */; };
 		ECEA464529914E910059FF0B /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA464429914E910059FF0B /* LibraryViewController.swift */; };
 		ECEA4647299155CD0059FF0B /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA4646299155CD0059FF0B /* ArticleDTO.swift */; };
-		ECEA4649299159B00059FF0B /* MyTutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA4648299159B00059FF0B /* MyTutorialsViewController.swift */; };
+		ECEA4649299159B00059FF0B /* MyTutorialsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA4648299159B00059FF0B /* MyTutorialsController.swift */; };
 		ECEA464D299191220059FF0B /* IncludedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA464C299191220059FF0B /* IncludedDTO.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		B91B9D57298C3AA700814C3C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = ArticleWorks/Controllers/TabBar.swift; sourceTree = SOURCE_ROOT; };
+		B993FBE529928BEB00642E40 /* MyTutorialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTutorialsView.swift; sourceTree = "<group>"; };
 		EC178ED0298D4324004EE08F /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
 		EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponseDTO.swift; sourceTree = "<group>"; };
 		EC178ED9298D65A9004EE08F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		EC604D20298C0C7B00C65000 /* ArticleWorksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWorksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ECEA464429914E910059FF0B /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		ECEA4646299155CD0059FF0B /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
-		ECEA4648299159B00059FF0B /* MyTutorialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTutorialsViewController.swift; sourceTree = "<group>"; };
+		ECEA4648299159B00059FF0B /* MyTutorialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTutorialsController.swift; sourceTree = "<group>"; };
 		ECEA464C299191220059FF0B /* IncludedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncludedDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +106,7 @@
 			children = (
 				EC604D01298C0C7A00C65000 /* ViewController.swift */,
 				ECEA464429914E910059FF0B /* LibraryViewController.swift */,
-				ECEA4648299159B00059FF0B /* MyTutorialsViewController.swift */,
+				ECEA4648299159B00059FF0B /* MyTutorialsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B91B9D57298C3AA700814C3C /* TabBar.swift */,
+				B993FBE529928BEB00642E40 /* MyTutorialsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,12 +325,13 @@
 				EC604D02298C0C7A00C65000 /* ViewController.swift in Sources */,
 				EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */,
 				EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */,
+				B993FBE629928BEB00642E40 /* MyTutorialsView.swift in Sources */,
 				EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */,
 				EC178EDA298D65A9004EE08F /* Article.swift in Sources */,
 				EC604D00298C0C7A00C65000 /* SceneDelegate.swift in Sources */,
 				ECEA464D299191220059FF0B /* IncludedDTO.swift in Sources */,
 				ECEA464529914E910059FF0B /* LibraryViewController.swift in Sources */,
-				ECEA4649299159B00059FF0B /* MyTutorialsViewController.swift in Sources */,
+				ECEA4649299159B00059FF0B /* MyTutorialsController.swift in Sources */,
 				B91B9D58298C3AA700814C3C /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
