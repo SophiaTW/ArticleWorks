@@ -12,7 +12,7 @@ import Foundation
 class ArticleAPIUnitTests: XCTestCase {
     var sut: ArticleAPI?
     var data: ArticlesResponseDTO?
-    var expected = [Article(title: "Mac Catalyst with Andy Pereira – Podcast S10 E7", domain: "iOS & Swift", description: "Dru flips the switch on his 50th show with Andy Pereira telling us how easy Catalyst can be. After Dru talks about transitioning from developer to architect. \n", createdDate: "2020-05-20T18:01:43.000Z", duration: 60, image: "https://koenig-media.raywenderlich.com/uploads/2016/02/Logo.png")]
+    var expected = [Article(title: "Mac Catalyst with Andy Pereira – Podcast S10 E7", domain: "iOS & Swift", description: "Dru flips the switch on his 50th show with Andy Pereira telling us how easy Catalyst can be. After Dru talks about transitioning from developer to architect. \n", createdDate: "May 20 2020", duration: 60, image: "https://koenig-media.raywenderlich.com/uploads/2016/02/Logo.png")]
     
     override func setUp() {
         sut = ArticleAPI()
@@ -58,6 +58,12 @@ class ArticleAPIUnitTests: XCTestCase {
         let result = sut!.mapDTOToArticle (articlesResponseDTO: articleResponseDTO)
         // then
         XCTAssertEqual(expected[0].image, result[0].image)
+    }
+    
+    func testStringToDate() {
+        let dateString = "2020-05-20T18:01:43.000Z"
+        let result = sut!.parseStringToDate(dateString: dateString)
+        XCTAssertEqual(expected[0].createdDate, result)
     }
     
 }
