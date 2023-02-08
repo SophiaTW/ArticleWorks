@@ -80,23 +80,17 @@ struct ArticleAPI: ArticleAPIProtocol {
         return components.url
     }
     
+    func parseStringToDate (dateString: String) -> String {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withFullDate, .withFullTime, .withFractionalSeconds]
+        guard let date = formatter.date(from: dateString) else {return ""}
 
-        func parseStringToDate (dateString: String) -> String {
-            let formatter = ISO8601DateFormatter()
-            formatter.formatOptions = [.withFullDate, .withFullTime, .withFractionalSeconds]
-            guard let date = formatter.date(from: dateString) else {return ""}
-            
-            print(date)
-            let dateText = date.formatted(.date.month().day().year())
-            
-            return dateText
-            
-            
-            /*let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM dd yyyy"
-            guard let date = dateFormatter.dateFormat(from: dateString) else {return ""}
-            print(date)
-            return dateFormatter.string(from: date)*/
+        var dateText = date.formatted(.dateTime.month().day().year())
+        var i = dateText.index(dateText.startIndex, offsetBy: 3)
+        dateText.remove(at: i)
+        var y = dateText.index(dateText.startIndex, offsetBy: 6)
+        dateText.remove(at: y)
+        return String(dateText).capitalized
         }
     
     
