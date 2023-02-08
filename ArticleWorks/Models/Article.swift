@@ -12,10 +12,10 @@ final class Article: Codable {
     let domain: String
     let description: String
     let createdDate: String
-    let duration: Int
+    let duration: String
     let image: String
     
-    init(title: String, domain: String, description: String, createdDate: String, duration: Int, image: String) {
+    init(title: String, domain: String, description: String, createdDate: String, duration: String, image: String) {
         self.title = title
         self.domain = domain
         self.description = description

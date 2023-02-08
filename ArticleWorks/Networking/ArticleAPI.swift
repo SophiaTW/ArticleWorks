@@ -67,7 +67,9 @@ struct ArticleAPI: ArticleAPIProtocol {
             let domain = articlesResponseDTO.included.first { included in
                 return included.id == article.relationships.domains.data.first?.id
             }
-            return Article(title: article.attributes.name, domain: domain?.attributes.name ?? "", description: article.attributes.description, createdDate: article.attributes.released_at, duration: article.attributes.duration, image: article.attributes.card_artwork_url)
+            let createdDate = parseStringToDate(dateString: article.attributes.released_at)
+            let duration = parseMinutesToString(duration: article.attributes.duration)
+            return Article(title: article.attributes.name, domain: domain?.attributes.name ?? "", description: article.attributes.description, createdDate: createdDate, duration: duration, image: article.attributes.card_artwork_url)
         }
     }
     
@@ -86,13 +88,22 @@ struct ArticleAPI: ArticleAPIProtocol {
         guard let date = formatter.date(from: dateString) else {return ""}
 
         var dateText = date.formatted(.dateTime.month().day().year())
-        var i = dateText.index(dateText.startIndex, offsetBy: 3)
-        dateText.remove(at: i)
-        var y = dateText.index(dateText.startIndex, offsetBy: 6)
-        dateText.remove(at: y)
+        let dot = dateText.index(dateText.startIndex, offsetBy: 3)
+        let comma = dateText.index(dateText.startIndex, offsetBy: 6)
+        dateText.remove(at: dot)
+        dateText.remove(at: comma)
         return String(dateText).capitalized
-        }
+    }
     
-    
+    func parseMinutesToString(duration: Int) -> String {
+        let hour = duration/60
+        let minutes = duration%60
         
+        var hourString = hour != 0 ?"\(hour) hr" : ""
+        hourString = hour > 1 ? "\(hourString)s" : hourString
+        let minutesString = minutes != 0 ? "\(minutes) mins" : ""
+        let comma = hourString != "" && minutesString != "" ? ", " : ""
+
+        return hourString + comma + minutesString
+    }
 }

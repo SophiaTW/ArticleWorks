@@ -110,6 +110,17 @@
                 "level" : "production",
                 "ordinal" : 1
             }
+        },
+        {
+            "id" : "2",
+            "type" : "domains",
+            "attributes" : {
+                "name" : "Android & Kotlin",
+                "slug" : "android",
+                "description" : "Learn Android development in Kotlin",
+                "level" : "production",
+                "ordinal" : 2
+            }
         }
     ]
 }
