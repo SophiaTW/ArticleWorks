@@ -49,9 +49,24 @@ class MyTutorialsView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
+        cell.frame = CGRect(x:0, y:0, width: 30, height: 200)
+        cell.directionalLayoutMargins.trailing = CGFloat(80)
         var content = cell.defaultContentConfiguration()
         if let articleResult = articles?[indexPath.row] {
             content.text = articleResult.title
+            
+            let title: UILabel = {
+              let label = UILabel()
+              label.font = UIFont.boldSystemFont(ofSize: 14)
+              label.clipsToBounds = true
+              label.translatesAutoresizingMaskIntoConstraints = true
+               return label
+            }()
+            
+            view.addSubview(title)
+            
+            
+            content.textProperties.lineBreakMode = NSLineBreakMode(rawValue: 1)!
             content.secondaryText = "\(articleResult.domain)\n\n\(articleResult.description) \n\(articleResult.createdDate) - Video Course (\(articleResult.duration))"
             if let imageUrl = URL(string: articleResult.image) {
                 var imageData: NSData = try! NSData(contentsOf: imageUrl)
