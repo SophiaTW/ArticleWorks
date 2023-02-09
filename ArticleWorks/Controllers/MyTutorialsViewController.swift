@@ -17,7 +17,7 @@ class MyTutorialsView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         articleAPI.getAllArticles(query: "") {[weak self] response in
             print(response)
             guard let self = self else {return }
@@ -49,14 +49,30 @@ class MyTutorialsView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        if let articlesResult = articles?[indexPath.row] {
-            cell.textLabel?.text = articlesResult.title
-            if let imageUrl = URL(string: articlesResult.image) {
+        var content = cell.defaultContentConfiguration()
+        if let articleResult = articles?[indexPath.row] {
+            content.text = articleResult.title
+            content.secondaryText = "\(articleResult.domain)\n\n\(articleResult.description) \n\(articleResult.createdDate) - Video Course (\(articleResult.duration))"
+            if let imageUrl = URL(string: articleResult.image) {
                 var imageData: NSData = try! NSData(contentsOf: imageUrl)
-                var articleImage = UIImage(data: imageData as Data)
-                cell.imageView?.image = articleImage
+                let articleImage = UIImage(data: imageData as Data)
+                let articleImageView:UIImageView = {
+                    let img = UIImageView(image: articleImage)
+                    img.contentMode = .scaleAspectFill
+                    img.translatesAutoresizingMaskIntoConstraints = false
+                    img.layer.cornerRadius = 10
+                    img.clipsToBounds = true
+                    return img
+                }()
+                cell.addSubview(articleImageView)
+                articleImageView.widthAnchor.constraint(equalToConstant:60).isActive = true
+                articleImageView.heightAnchor.constraint(equalToConstant:60).isActive = true
+                articleImageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10).isActive = true
+                articleImageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 10).isActive = true
             }
+            
         }
+        cell.contentConfiguration = content
         return cell
     }
 }
