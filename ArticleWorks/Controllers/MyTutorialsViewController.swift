@@ -25,6 +25,10 @@ class MyTutorialsView: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .lightGray
+        //tableView.contentSize = .(width: 10, height: 10)
+        tableView.frame = .init(x: 10, y: 10, width: 10, height: 10)
+        //tableView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         setUpView()
         setUpConstraints()
         bindData()
@@ -49,25 +53,35 @@ class MyTutorialsView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        cell.frame = CGRect(x:0, y:0, width: 30, height: 200)
         cell.directionalLayoutMargins.trailing = CGFloat(80)
+        cell.backgroundColor = .blue
+        cell.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 80)
         var content = cell.defaultContentConfiguration()
         if let articleResult = articles?[indexPath.row] {
             content.text = articleResult.title
-            
-            let title: UILabel = {
-              let label = UILabel()
-              label.font = UIFont.boldSystemFont(ofSize: 14)
-              label.clipsToBounds = true
-              label.translatesAutoresizingMaskIntoConstraints = true
-               return label
-            }()
-            
-            view.addSubview(title)
-            
-            
+            /*
+             let title: UILabel = {
+             let label = UILabel()
+             label.font = UIFont.boldSystemFont(ofSize: 14)
+             label.clipsToBounds = true
+             label.textColor = .black
+             label.translatesAutoresizingMaskIntoConstraints = false
+             return label
+             }()
+             title.text = "hola"
+             cell.addSubview(title)
+             title.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: 10).isActive = true
+             //    title.heightAnchor.constraint(equalToConstant: 30).isActive = true
+             title.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 10).isActive = true
+             title.topAnchor.constraint(equalTo: cell.topAnchor, constant:0 ).isActive = true
+             */
+            content.textProperties.font = .boldSystemFont(ofSize: CGFloat(18.0))
             content.textProperties.lineBreakMode = NSLineBreakMode(rawValue: 1)!
-            content.secondaryText = "\(articleResult.domain)\n\n\(articleResult.description) \n\(articleResult.createdDate) - Video Course (\(articleResult.duration))"
+            let index = articleResult.description.index(articleResult.description.startIndex, offsetBy: 75)
+            content.secondaryText = "\(articleResult.domain)\n\n\(articleResult.description[..<index])\n\n\(articleResult.createdDate) - Video Course (\(articleResult.duration))"
+            content.secondaryTextProperties.font = .preferredFont(forTextStyle: .caption1)
+            
+        
             if let imageUrl = URL(string: articleResult.image) {
                 var imageData: NSData = try! NSData(contentsOf: imageUrl)
                 let articleImage = UIImage(data: imageData as Data)
@@ -80,6 +94,7 @@ class MyTutorialsView: UIViewController, UITableViewDataSource, UITableViewDeleg
                     return img
                 }()
                 cell.addSubview(articleImageView)
+                //TODO: usar subviews para usar label para el dominio y detalles del articulo
                 articleImageView.widthAnchor.constraint(equalToConstant:60).isActive = true
                 articleImageView.heightAnchor.constraint(equalToConstant:60).isActive = true
                 articleImageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10).isActive = true
