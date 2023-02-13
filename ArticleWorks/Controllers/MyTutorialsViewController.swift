@@ -24,7 +24,7 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
             self.articles = response
         }
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = .init(width: view.frame.size.width - 30, height: 176)
+        layout.itemSize = .init(width: view.frame.size.width - 30, height: 180)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
@@ -46,6 +46,15 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
             self.view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
         ])
         bindData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Write your navigation controller name instead of **ViewController**
+        //let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController") as? ViewController
+        //self.navigationController?.pushViewController(vc!, animated: true)
+        
+        navigationController?.pushViewController(ViewController(), animated: true)
+
     }
     
     func collectionView(_ collectionView: UICollectionView,

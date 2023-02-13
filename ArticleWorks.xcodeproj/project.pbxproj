@@ -19,6 +19,7 @@
 		B99DB12B299A611D00D638C4 /* MyTutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99DB12A299A611D00D638C4 /* MyTutorialsViewController.swift */; };
 		B99DB12D299A812100D638C4 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99DB12C299A812100D638C4 /* CellViewController.swift */; };
 		EC0C97CC299A86A000BB005B /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C97CB299A86A000BB005B /* ArticleDetailsViewController.swift */; };
+		EC0C97CE299ADBFA00BB005B /* NombreCualquiera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0C97CD299ADBFA00BB005B /* NombreCualquiera.swift */; };
 		EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED0298D4324004EE08F /* ArticleAPI.swift */; };
 		EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */; };
 		EC178EDA298D65A9004EE08F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED9298D65A9004EE08F /* Article.swift */; };
@@ -59,6 +60,7 @@
 		B99DB12A299A611D00D638C4 /* MyTutorialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTutorialsViewController.swift; sourceTree = "<group>"; };
 		B99DB12C299A812100D638C4 /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		EC0C97CB299A86A000BB005B /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
+		EC0C97CD299ADBFA00BB005B /* NombreCualquiera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NombreCualquiera.swift; sourceTree = "<group>"; };
 		EC178ED0298D4324004EE08F /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
 		EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponseDTO.swift; sourceTree = "<group>"; };
 		EC178ED9298D65A9004EE08F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				B99DB12A299A611D00D638C4 /* MyTutorialsViewController.swift */,
 				B99DB12C299A812100D638C4 /* CellViewController.swift */,
 				EC0C97CB299A86A000BB005B /* ArticleDetailsViewController.swift */,
+				EC0C97CD299ADBFA00BB005B /* NombreCualquiera.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				EC604D02298C0C7A00C65000 /* ViewController.swift in Sources */,
 				EC0C97CC299A86A000BB005B /* ArticleDetailsViewController.swift in Sources */,
 				EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */,
+				EC0C97CE299ADBFA00BB005B /* NombreCualquiera.swift in Sources */,
 				EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */,
 				EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */,
 				B99DB12D299A812100D638C4 /* CellViewController.swift in Sources */,

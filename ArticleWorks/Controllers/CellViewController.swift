@@ -93,4 +93,6 @@ class Cell: UICollectionViewCell {
     func reset() {
         self.title.textAlignment = .left
     }
+    
+    
 }
