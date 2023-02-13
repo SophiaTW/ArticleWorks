@@ -85,6 +85,7 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
         }
         return cell
     }
+    
     func bindData() {
         cancellable = $articles
             .receive(on: DispatchQueue.main)
@@ -94,10 +95,3 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
     }
 }
 
-
-extension ViewController: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-    }
-}
