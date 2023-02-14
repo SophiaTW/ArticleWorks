@@ -25,16 +25,6 @@ class ArticleDetailsViewController: UIViewController {
         
         guard let articleImageView = loadImage(article: article) else {return }
         
-        
-        view.addSubview(articleImageView)
-        NSLayoutConstraint.activate([
-            articleImageView.widthAnchor.constraint(equalToConstant: view.frame.size.width),
-            articleImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.frame.size.height*1/2),
-            articleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            articleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            articleImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        ])
-        
         let articleTechnology: UILabel = {
             let text =  UILabel()
             text.frame = .zero
@@ -47,7 +37,7 @@ class ArticleDetailsViewController: UIViewController {
         let articleTitle: UILabel = {
             let text =  UILabel()
             text.frame = .zero
-            text.font = .boldSystemFont(ofSize: CGFloat(18.0))
+            text.font = .boldSystemFont(ofSize: CGFloat(20.0))
             text.translatesAutoresizingMaskIntoConstraints = false
             text.lineBreakMode = .byWordWrapping
             text.numberOfLines = 2
@@ -83,31 +73,43 @@ class ArticleDetailsViewController: UIViewController {
             return text
         }()
         
+        view.addSubview(articleImageView)
         view.addSubview(articleTechnology)
         view.addSubview(articleTitle)
         view.addSubview(articleTime)
         view.addSubview(articleDescription)
         view.addSubview(articleContributor)
-        
+  
         NSLayoutConstraint.activate([
-            articleTechnology.topAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 10),
-            view.leadingAnchor.constraint(equalTo: articleTechnology.leadingAnchor, constant: -20),
-            view.trailingAnchor.constraint(equalTo: articleTechnology.trailingAnchor, constant: 20),
+            articleImageView.widthAnchor.constraint(equalToConstant: view.frame.size.width),
+            articleImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.frame.size.height*1/2),
+            articleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            articleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            articleImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+
+            articleTechnology.topAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 20),
+            articleTechnology.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            articleTechnology.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
             articleTitle.topAnchor.constraint(equalTo: articleTechnology.bottomAnchor, constant: 20),
-            view.leadingAnchor.constraint(equalTo: articleTitle.leadingAnchor, constant: -20),
-            view.trailingAnchor.constraint(equalTo: articleTitle.trailingAnchor, constant: 20),
-            articleTime.topAnchor.constraint(equalTo: articleTitle.bottomAnchor, constant: 10),
-            view.leadingAnchor.constraint(equalTo: articleTime.leadingAnchor, constant: -20),
-            view.trailingAnchor.constraint(equalTo: articleTime.trailingAnchor, constant: 20),
+            articleTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            articleTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            articleTime.topAnchor.constraint(equalTo: articleTitle.bottomAnchor, constant: 20),
+            articleTime.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            articleTime.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
             articleDescription.topAnchor.constraint(equalTo: articleTime.bottomAnchor, constant: 20),
-            view.leadingAnchor.constraint(equalTo: articleDescription.leadingAnchor, constant: -20),
-            view.trailingAnchor.constraint(equalTo: articleDescription.trailingAnchor, constant: 20),
+            articleDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            articleDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
             articleContributor.topAnchor.constraint(equalTo: articleDescription.bottomAnchor, constant: 20),
-            view.leadingAnchor.constraint(equalTo: articleContributor.leadingAnchor, constant: -20),
-            view.trailingAnchor.constraint(equalTo: articleContributor.trailingAnchor, constant: 20),
-            articleContributor.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            articleContributor.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            articleContributor.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            //articleContributor.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
-        articleTechnology.text = article.technology
+        
+        articleTechnology.text = article.technology.uppercased()
         articleTitle.text = article.title
         let difficulty = article.difficulty != "" ? "- \(article.difficulty) " : ""
         articleTime.text = "\(article.createdDate) \(difficulty)- Video Course (\(article.duration))"

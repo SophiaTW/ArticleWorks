@@ -43,7 +43,6 @@ class Cell: UICollectionViewCell {
             text.font = .boldSystemFont(ofSize: CGFloat(12.0))
             text.textColor = .lightGray
             text.translatesAutoresizingMaskIntoConstraints = false
-            //text.lineBreakMode = .byWordWrapping
             text.numberOfLines = 2
             return text
         }()
@@ -61,19 +60,24 @@ class Cell: UICollectionViewCell {
         self.contentView.addSubview(domain)
         self.contentView.addSubview(desc)
         self.contentView.addSubview(time)
+        
         NSLayoutConstraint.activate([
-            self.contentView.leadingAnchor.constraint(equalTo: title.leadingAnchor, constant: -10),
-            self.contentView.trailingAnchor.constraint(equalTo: title.trailingAnchor, constant: 80),
-            self.contentView.topAnchor.constraint(equalTo: title.topAnchor, constant: -10),
-            title.bottomAnchor.constraint(equalTo: domain.topAnchor, constant: -5),
-            self.contentView.leadingAnchor.constraint(equalTo: domain.leadingAnchor, constant: -10),
-            self.contentView.trailingAnchor.constraint(equalTo: domain.trailingAnchor, constant: 80),
-            domain.bottomAnchor.constraint(equalTo: desc.topAnchor, constant: -25),
-            self.contentView.leadingAnchor.constraint(equalTo: desc.leadingAnchor, constant: -10),
-            self.contentView.trailingAnchor.constraint(equalTo: desc.trailingAnchor, constant: 10),
-            desc.bottomAnchor.constraint(equalTo: time.topAnchor, constant: -20),
-            self.contentView.leadingAnchor.constraint(equalTo: time.leadingAnchor, constant: -10),
+            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -80),
+            title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            
+            domain.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 5),
+            domain.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            domain.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -80),
+            
+            desc.topAnchor.constraint(equalTo: domain.bottomAnchor, constant: 25),
+            desc.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            desc.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            
+            time.topAnchor.constraint(equalTo: desc.bottomAnchor, constant: 20),
+            time.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
         ])
+        
         self.title = title
         self.domain = domain
         self.desc = desc
@@ -93,6 +97,4 @@ class Cell: UICollectionViewCell {
     func reset() {
         self.title.textAlignment = .left
     }
-    
-    
 }

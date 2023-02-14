@@ -23,31 +23,21 @@ class ArticleAPIUnitTests: XCTestCase {
         sut = nil
     }
     
-    // TODO: Probar datos especificos, no especificos, probar todo
     func testMapDTOToArticleTitle() {
-        // given
         let articleResponseDTO = data!
-        // when
         let result = sut!.mapDTOToArticle (articlesResponseDTO: articleResponseDTO)
-        // then
         XCTAssertEqual(expected[0].title, result[0].title)
     }
     
     func testMapDTOToArticleDomain() {
-        // given
         let articleResponseDTO = data!
-        // when
         let result = sut!.mapDTOToArticle (articlesResponseDTO: articleResponseDTO)
-        // then
         XCTAssertEqual(expected[0].domain, result[0].domain)
     }
     
     func testMapDTOToArticleDescription() {
-        // given
         let articleResponseDTO = data!
-        // when
         let result = sut!.mapDTOToArticle (articlesResponseDTO: articleResponseDTO)
-        // then
         XCTAssertEqual(expected[0].description, result[0].description)
     }
     
