@@ -13,6 +13,8 @@ class ArticleDetailsViewController: UIViewController {
     weak var articleTitle: UILabel!
     weak var articleTime: UILabel!
     weak var articleDescription: UILabel!
+    weak var articleContributor: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class ArticleDetailsViewController: UIViewController {
         view.addSubview(articleImageView)
         NSLayoutConstraint.activate([
             articleImageView.widthAnchor.constraint(equalToConstant: view.frame.size.width),
-            articleImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.frame.size.height*1/3),
+            articleImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.frame.size.height*1/2),
             articleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             articleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             articleImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -71,13 +73,27 @@ class ArticleDetailsViewController: UIViewController {
             return text
         }()
         
+        let articleContributor: UILabel = {
+            let text =  UILabel()
+            text.frame = .zero
+            text.font = .boldSystemFont(ofSize: CGFloat(12.0))
+            text.textColor = .lightGray
+            text.translatesAutoresizingMaskIntoConstraints = false
+            text.numberOfLines = 3
+            return text
+        }()
+        
         view.addSubview(articleTechnology)
         view.addSubview(articleTitle)
         view.addSubview(articleTime)
         view.addSubview(articleDescription)
+        view.addSubview(articleContributor)
         
         NSLayoutConstraint.activate([
-            articleTitle.topAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 10),
+            articleTechnology.topAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 10),
+            view.leadingAnchor.constraint(equalTo: articleTechnology.leadingAnchor, constant: -20),
+            view.trailingAnchor.constraint(equalTo: articleTechnology.trailingAnchor, constant: 20),
+            articleTitle.topAnchor.constraint(equalTo: articleTechnology.bottomAnchor, constant: 20),
             view.leadingAnchor.constraint(equalTo: articleTitle.leadingAnchor, constant: -20),
             view.trailingAnchor.constraint(equalTo: articleTitle.trailingAnchor, constant: 20),
             articleTime.topAnchor.constraint(equalTo: articleTitle.bottomAnchor, constant: 10),
@@ -86,14 +102,22 @@ class ArticleDetailsViewController: UIViewController {
             articleDescription.topAnchor.constraint(equalTo: articleTime.bottomAnchor, constant: 20),
             view.leadingAnchor.constraint(equalTo: articleDescription.leadingAnchor, constant: -20),
             view.trailingAnchor.constraint(equalTo: articleDescription.trailingAnchor, constant: 20),
+            articleContributor.topAnchor.constraint(equalTo: articleDescription.bottomAnchor, constant: 20),
+            view.leadingAnchor.constraint(equalTo: articleContributor.leadingAnchor, constant: -20),
+            view.trailingAnchor.constraint(equalTo: articleContributor.trailingAnchor, constant: 20),
+            articleContributor.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
+        articleTechnology.text = article.technology
         articleTitle.text = article.title
         let difficulty = article.difficulty != "" ? "- \(article.difficulty) " : ""
         articleTime.text = "\(article.createdDate) \(difficulty)- Video Course (\(article.duration))"
         articleDescription.text = article.description
+        articleContributor.text = article.contributor
+        self.articleTechnology = articleTechnology
         self.articleTitle = articleTitle
         self.articleTime = articleTime
         self.articleDescription = articleDescription
+        self.articleContributor = articleContributor
     }
     
     func loadImage(article: Article) -> UIImageView? {
