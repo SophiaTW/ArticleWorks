@@ -13,6 +13,7 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
     private var cancellable: AnyCancellable?
     
     weak var collectionView: UICollectionView!
+    weak var articleImageView: UIImageView?
     private let articleAPI = ArticleAPI()
     @Published var articles: [Article]?
 
@@ -49,12 +50,9 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Write your navigation controller name instead of **ViewController**
-        //let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController") as? ViewController
-        //self.navigationController?.pushViewController(vc!, animated: true)
-        
-        navigationController?.pushViewController(ViewController(), animated: true)
-
+        let vc = ViewController()
+        vc.article = articles?[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -73,24 +71,13 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
             cell.domain.text = articleResult.domain
             cell.desc.text = articleResult.description
             cell.time.text = "\(articleResult.createdDate) - Video Course (\(articleResult.duration))"
-            if let imageUrl = URL(string: articleResult.image) {
-                let imageData: NSData = try! NSData(contentsOf: imageUrl)
-                let articleImage = UIImage(data: imageData as Data)
-                let articleImageView:UIImageView = {
-                    let img = UIImageView(image: articleImage)
-                    img.contentMode = .scaleAspectFill
-                    img.translatesAutoresizingMaskIntoConstraints = false
-                    img.layer.cornerRadius = 10
-                    img.clipsToBounds = true
-                    return img
-                }()
+            if let articleImageView = loadImage(article: articleResult) {
                 cell.addSubview(articleImageView)
                 articleImageView.widthAnchor.constraint(equalToConstant:60).isActive = true
                 articleImageView.heightAnchor.constraint(equalToConstant:60).isActive = true
                 articleImageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10).isActive = true
                 articleImageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 10).isActive = true
             }
-            
         }
         return cell
     }
@@ -101,6 +88,23 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
             .sink(receiveValue: {[weak self] _ in
                 self?.collectionView.reloadData()
             })
+    }
+    
+    func loadImage(article: Article) -> UIImageView? {
+        if let imageUrl = URL(string: article.image) {
+            let imageData: NSData = try! NSData(contentsOf: imageUrl)
+            let articleImage = UIImage(data: imageData as Data)
+            let articleImageView:UIImageView = {
+                let img = UIImageView(image: articleImage)
+                img.contentMode = .scaleAspectFill
+                img.translatesAutoresizingMaskIntoConstraints = false
+                img.layer.cornerRadius = 10
+                img.clipsToBounds = true
+                return img
+            }()
+            return articleImageView
+        }
+        return nil
     }
 }
 
