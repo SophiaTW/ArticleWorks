@@ -35,7 +35,7 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView.backgroundColor = .systemGray6
+        self.collectionView.backgroundColor = UIColor(red: 240/255, green: 244/255, blue: 250/255, alpha: 1)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.identifier)
@@ -50,7 +50,7 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ViewController()
+        let vc = ArticleDetailsViewController()
         vc.article = articles?[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }

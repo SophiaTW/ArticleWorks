@@ -69,7 +69,8 @@ struct ArticleAPI: ArticleAPIProtocol {
             }
             let createdDate = parseStringToDate(dateString: article.attributes.released_at)
             let duration = parseMinutesToString(duration: article.attributes.duration)
-            return Article(title: article.attributes.name, domain: domain?.attributes.name ?? "", description: article.attributes.description, createdDate: createdDate, duration: duration, image: article.attributes.card_artwork_url)
+            let difficulty = article.attributes.difficulty?.capitalized ?? ""
+            return Article(title: article.attributes.name, domain: domain?.attributes.name ?? "", description: article.attributes.description, createdDate: createdDate, difficulty: difficulty, duration: duration, technology: article.attributes.technology_triple_string, contributor: article.attributes.contributor_string, image: article.attributes.card_artwork_url)
         }
     }
     

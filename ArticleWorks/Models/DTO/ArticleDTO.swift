@@ -17,7 +17,10 @@ final class AttributesDTO: Codable {
     let name: String
     let description: String
     let released_at: String
+    let difficulty: String?
     let duration: Int
+    let technology_triple_string: String
+    let contributor_string: String
     let professional: Bool
     let card_artwork_url: String
 }

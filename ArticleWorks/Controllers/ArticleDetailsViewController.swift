@@ -8,27 +8,39 @@
 import UIKit
 
 class ArticleDetailsViewController: UIViewController {
-    
     weak var article : Article?
-    
+    weak var articleTechnology: UILabel!
     weak var articleTitle: UILabel!
     weak var articleTime: UILabel!
     weak var articleDescription: UILabel!
-    weak var articleTechnology: UILabel!
-    weak var articleContributor: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 240/255, green: 244/255, blue: 250/255, alpha: 1)
+        self.navigationItem.largeTitleDisplayMode = .never
         
-        let containerView = UIView()
-            containerView.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(containerView)
-            NSLayoutConstraint.activate([
-                self.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
-                self.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
-                self.view.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
-                self.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10),
-            ])
+        guard let article = article else {return }
+        
+        guard let articleImageView = loadImage(article: article) else {return }
+        
+        
+        view.addSubview(articleImageView)
+        NSLayoutConstraint.activate([
+            articleImageView.widthAnchor.constraint(equalToConstant: view.frame.size.width),
+            articleImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.frame.size.height*1/3),
+            articleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            articleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            articleImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+        ])
+        
+        let articleTechnology: UILabel = {
+            let text =  UILabel()
+            text.frame = .zero
+            text.font = .boldSystemFont(ofSize: CGFloat(12.0))
+            text.textColor = .lightGray
+            text.translatesAutoresizingMaskIntoConstraints = false
+            return text
+        }()
         
         let articleTitle: UILabel = {
             let text =  UILabel()
@@ -49,24 +61,57 @@ class ArticleDetailsViewController: UIViewController {
             return text
         }()
         
-        containerView.addSubview(articleTitle)
-        containerView.addSubview(articleTime)
+        let articleDescription: UILabel = {
+            let text =  UILabel()
+            text.frame = .zero
+            text.font = .boldSystemFont(ofSize: CGFloat(12.0))
+            text.textColor = .lightGray
+            text.translatesAutoresizingMaskIntoConstraints = false
+            text.numberOfLines = 6
+            return text
+        }()
+        
+        view.addSubview(articleTechnology)
+        view.addSubview(articleTitle)
+        view.addSubview(articleTime)
+        view.addSubview(articleDescription)
+        
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: articleTitle.topAnchor),
-            containerView.leadingAnchor.constraint(equalTo: articleTitle.leadingAnchor, constant: -10),
-            containerView.trailingAnchor.constraint(equalTo: articleTitle.trailingAnchor, constant: 40),
-            //containerView.bottomAnchor.constraint(equalTo: articleTitle.bottomAnchor),
-            articleTime.topAnchor.constraint(equalTo: articleTitle.bottomAnchor),
-            containerView.bottomAnchor.constraint(equalTo: articleTime.bottomAnchor),
+            articleTitle.topAnchor.constraint(equalTo: articleImageView.bottomAnchor, constant: 10),
+            view.leadingAnchor.constraint(equalTo: articleTitle.leadingAnchor, constant: -20),
+            view.trailingAnchor.constraint(equalTo: articleTitle.trailingAnchor, constant: 20),
+            articleTime.topAnchor.constraint(equalTo: articleTitle.bottomAnchor, constant: 10),
+            view.leadingAnchor.constraint(equalTo: articleTime.leadingAnchor, constant: -20),
+            view.trailingAnchor.constraint(equalTo: articleTime.trailingAnchor, constant: 20),
+            articleDescription.topAnchor.constraint(equalTo: articleTime.bottomAnchor, constant: 20),
+            view.leadingAnchor.constraint(equalTo: articleDescription.leadingAnchor, constant: -20),
+            view.trailingAnchor.constraint(equalTo: articleDescription.trailingAnchor, constant: 20),
         ])
-        articleTitle.text = "Hello"
-        articleTime.text = "Tiempo"
+        articleTitle.text = article.title
+        let difficulty = article.difficulty != "" ? "- \(article.difficulty) " : ""
+        articleTime.text = "\(article.createdDate) \(difficulty)- Video Course (\(article.duration))"
+        articleDescription.text = article.description
         self.articleTitle = articleTitle
         self.articleTime = articleTime
-        
+        self.articleDescription = articleDescription
     }
     
-   
+    func loadImage(article: Article) -> UIImageView? {
+        if let imageUrl = URL(string: article.image) {
+            let imageData: NSData = try! NSData(contentsOf: imageUrl)
+            let articleImage = UIImage(data: imageData as Data)
+            let articleImageView:UIImageView = {
+                let img = UIImageView(image: articleImage)
+                img.contentMode = .scaleAspectFill
+                img.translatesAutoresizingMaskIntoConstraints = false
+                img.clipsToBounds = true
+                return img
+            }()
+            return articleImageView
+        }
+        return nil
+    }
+    
 }
 
 
