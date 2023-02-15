@@ -93,6 +93,31 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func loadImage(article: Article) -> UIImageView? {
+        
+          if let url = URL(string: article.image) {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+              // Error handling...
+              guard let imageData = data else { return }
+
+              DispatchQueue.main.async {
+                  let articleImage = UIImage(data: imageData)
+                  let articleImageView:UIImageView = {
+                      let img = UIImageView(image: articleImage)
+                      img.contentMode = .scaleAspectFill
+                      img.translatesAutoresizingMaskIntoConstraints = false
+                      img.layer.cornerRadius = 10
+                      img.clipsToBounds = true
+                      return img
+                  }()
+                  self.articleImageView = articleImageView
+              }
+            }.resume()
+          }
+        
+        
+        
+        
+        
         if let imageUrl = URL(string: article.image) {
             let imageData: NSData = try! NSData(contentsOf: imageUrl)
             let articleImage = UIImage(data: imageData as Data)
@@ -104,6 +129,7 @@ class MyTutorialsController: UIViewController, UICollectionViewDataSource, UICol
                 img.clipsToBounds = true
                 return img
             }()
+             
             return articleImageView
         }
         return nil
