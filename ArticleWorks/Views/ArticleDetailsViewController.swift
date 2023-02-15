@@ -121,23 +121,20 @@ class ArticleDetailsViewController: UIViewController {
         self.articleDescription = articleDescription
         self.articleContributor = articleContributor
     }
-    
+        
     func loadImage(article: Article) -> UIImageView? {
         if let imageUrl = URL(string: article.image) {
-            let imageData: NSData = try! NSData(contentsOf: imageUrl)
-            let articleImage = UIImage(data: imageData as Data)
-            let articleImageView:UIImageView = {
-                let img = UIImageView(image: articleImage)
-                img.contentMode = .scaleAspectFill
-                img.translatesAutoresizingMaskIntoConstraints = false
-                img.clipsToBounds = true
-                return img
-            }()
-            return articleImageView
+            let img = UIImageView()
+            img.downloaded(from: imageUrl)
+            img.contentMode = .scaleAspectFill
+            img.translatesAutoresizingMaskIntoConstraints = false
+            img.layer.cornerRadius = 10
+            img.clipsToBounds = true
+            
+            return img
         }
         return nil
     }
-    
 }
 
 

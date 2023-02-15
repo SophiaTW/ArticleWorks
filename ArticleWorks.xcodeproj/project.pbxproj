@@ -22,6 +22,7 @@
 		EC178ED1298D4324004EE08F /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED0298D4324004EE08F /* ArticleAPI.swift */; };
 		EC178ED6298D64F1004EE08F /* ArticlesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */; };
 		EC178EDA298D65A9004EE08F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC178ED9298D65A9004EE08F /* Article.swift */; };
+		EC29D526299D23D500179AAD /* ImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC29D525299D23D500179AAD /* ImageLoad.swift */; };
 		EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604CFD298C0C7A00C65000 /* AppDelegate.swift */; };
 		EC604D00298C0C7A00C65000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604CFF298C0C7A00C65000 /* SceneDelegate.swift */; };
 		EC604D02298C0C7A00C65000 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC604D01298C0C7A00C65000 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		EC178ED0298D4324004EE08F /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
 		EC178ED5298D64F1004EE08F /* ArticlesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponseDTO.swift; sourceTree = "<group>"; };
 		EC178ED9298D65A9004EE08F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		EC29D525299D23D500179AAD /* ImageLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoad.swift; sourceTree = "<group>"; };
 		EC604CFA298C0C7A00C65000 /* ArticleWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC604CFD298C0C7A00C65000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC604CFF298C0C7A00C65000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,9 +119,6 @@
 			children = (
 				B91B9D57298C3AA700814C3C /* TabBarViewController.swift */,
 				EC604D01298C0C7A00C65000 /* ViewController.swift */,
-				B99DB12A299A611D00D638C4 /* MyTutorialsViewController.swift */,
-				B99DB12C299A812100D638C4 /* CellViewController.swift */,
-				EC0C97CB299A86A000BB005B /* ArticleDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				EC178ED0298D4324004EE08F /* ArticleAPI.swift */,
+				EC29D525299D23D500179AAD /* ImageLoad.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -148,6 +148,16 @@
 				ECEA464C299191220059FF0B /* IncludedDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		EC29D527299D2CAF00179AAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B99DB12A299A611D00D638C4 /* MyTutorialsViewController.swift */,
+				B99DB12C299A812100D638C4 /* CellViewController.swift */,
+				EC0C97CB299A86A000BB005B /* ArticleDetailsViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EC604CF1298C0C7A00C65000 = {
@@ -173,6 +183,7 @@
 		EC604CFC298C0C7A00C65000 /* ArticleWorks */ = {
 			isa = PBXGroup;
 			children = (
+				EC29D527299D2CAF00179AAD /* Views */,
 				EC178ECF298D42EB004EE08F /* Networking */,
 				B91B9D53298C39AF00814C3C /* Controllers */,
 				B91B9D52298C39A500814C3C /* Models */,
@@ -337,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECEA4647299155CD0059FF0B /* ArticleDTO.swift in Sources */,
+				EC29D526299D23D500179AAD /* ImageLoad.swift in Sources */,
 				EC604D02298C0C7A00C65000 /* ViewController.swift in Sources */,
 				EC0C97CC299A86A000BB005B /* ArticleDetailsViewController.swift in Sources */,
 				EC604CFE298C0C7A00C65000 /* AppDelegate.swift in Sources */,

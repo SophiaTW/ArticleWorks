@@ -14,15 +14,6 @@ class Cell: UICollectionViewCell {
     weak var domain: UILabel!
     weak var desc: UILabel!
     weak var time: UILabel!
-
-    var articleImageView = {(articleImage: UIImage) -> UIImageView? in
-        let img = UIImageView(image: articleImage)
-        img.contentMode = .scaleAspectFill
-        img.translatesAutoresizingMaskIntoConstraints = false
-        img.layer.cornerRadius = 10
-        img.clipsToBounds = true
-        return img
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
