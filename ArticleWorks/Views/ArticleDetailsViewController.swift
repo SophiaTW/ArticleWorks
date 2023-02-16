@@ -128,7 +128,6 @@ class ArticleDetailsViewController: UIViewController {
             img.downloaded(from: imageUrl)
             img.contentMode = .scaleAspectFill
             img.translatesAutoresizingMaskIntoConstraints = false
-            img.layer.cornerRadius = 10
             img.clipsToBounds = true
             
             return img

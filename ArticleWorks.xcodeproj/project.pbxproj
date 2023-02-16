@@ -183,8 +183,8 @@
 		EC604CFC298C0C7A00C65000 /* ArticleWorks */ = {
 			isa = PBXGroup;
 			children = (
-				EC29D527299D2CAF00179AAD /* Views */,
 				EC178ECF298D42EB004EE08F /* Networking */,
+				EC29D527299D2CAF00179AAD /* Views */,
 				B91B9D53298C39AF00814C3C /* Controllers */,
 				B91B9D52298C39A500814C3C /* Models */,
 				EC604CFD298C0C7A00C65000 /* AppDelegate.swift */,
